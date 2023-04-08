@@ -1,6 +1,8 @@
-let p = 100;
+let p = -1;
 let r = 7;
 let t = "t";
+
+
 
 try {
   if (p < 0) {
@@ -15,5 +17,12 @@ try {
   }
 } catch (e) {
   console.log(e);
+}  finally {
+    console.log("This is getting executed");
 }
+
+console.log("This is also getting executed");
+
+
+
 
