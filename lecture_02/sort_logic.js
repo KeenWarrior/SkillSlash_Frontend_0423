@@ -1,13 +1,13 @@
 
 function sortLogic(first, second){
-    if((first % 2) == (second % 2)){
-        return 0;
-    } else if((first % 2) == 0){
-        return 1;
-    } else {
-        return -1;
+    
+    if(first%2 == 0){
+        first = first - 2000;
     }
-    // return second - first;
+    if(second%2 == 0){
+        second = second - 2000;
+    }
+    return first - second
 }
 
 
