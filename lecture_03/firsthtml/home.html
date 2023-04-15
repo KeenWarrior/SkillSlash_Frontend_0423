@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.5/axios.min.js"></script>
+  </head>
+  <body>
+    <input id="username"></input>
+    <button onclick="fetchUser()"> Fetch </button>
+    <img id="profile"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp_9hfR4AQ8gZ81MHHigBKZr7IpdL05TqU82s9YFYTDg&s"
+    />
+    <script>
+      async function fetchUser() {
+        let username = document.getElementById("username").value;
+        let url = "https://api.github.com/users/" + username;
+        let resposne = await axios.get(url);
+        if (resposne.status == 200) {
+          let image_url = resposne.data.avatar_url;
+          let image = document.getElementById("profile");
+          image.setAttribute("src", image_url);
+          console.log(image_url);
+        } else if (resposne.status == 404) {
+          console.log("Wrong Username : " + username);
+        } else {
+          console.log("Something went wrong");
+        }
+      }
+    </script>
+  </body>
+</html>
