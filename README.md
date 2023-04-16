@@ -19,3 +19,8 @@
 
 Lecture 03
 - https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started
+
+
+Lecture 04
+
+- https://www.w3schools.com/tags/
