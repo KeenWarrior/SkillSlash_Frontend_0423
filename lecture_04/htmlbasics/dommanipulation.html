@@ -1,0 +1,33 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="root">
+
+        </div>
+       
+        <script>
+
+            let root = document.getElementById("root");
+
+            function deleteItem(element){
+                root.removeChild(element);
+            }
+            
+            
+            function modifyDate(){
+                let time = document.createElement("h1");
+                time.innerHTML = new Date();
+                root.appendChild(time);
+
+                setTimeout(deleteItem, 3000, time);
+
+            }
+
+            setInterval(modifyDate, 1000);
+
+
+        </script>
+    </body>
+</html>
