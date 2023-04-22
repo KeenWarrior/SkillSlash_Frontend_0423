@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item {
+    width: 400px;
+    border: 2px solid black;
+}
+
+
+.one {
+    height: 100px;
+    order: 5;
+}
+
+.two {
+    height: 200px;
+    order: 4;
+}
+
+.three {
+    height: 300px;
+    order: 3;
+}
+
+.four {
+    height: 100px;
+    order: 2;
+}
+
+.five {
+    height: 200px;
+    order: 1;
+}
+

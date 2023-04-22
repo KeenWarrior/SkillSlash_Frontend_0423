@@ -1,0 +1,23 @@
+body {
+    margin: 0px;
+}
+
+#root {
+    margin:32px;
+    padding:32px;
+    background-color: gray;
+}
+
+.item {
+    color: aquamarine;
+}
+
+.another{
+    color: red;
+}
+
+#click {
+    padding: 20px 40px 10px 30px;
+    margin: 20px;
+    border-radius: 16px;
+}
