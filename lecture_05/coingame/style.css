@@ -1,0 +1,22 @@
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    width: 200px;
+    height: 100px;
+    background-color: aquamarine;
+    border-radius: 32px;
+    font-size: large;
+}

@@ -1,0 +1,3 @@
+function startgame(){
+    playgame();
+}
