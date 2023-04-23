@@ -25,3 +25,7 @@ Lecture 04
 - https://www.w3schools.com/tags/
 - https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
 - https://www.w3schools.com/w3css/w3css_containers.asp
+
+Lecture 06
+- `npx create-react-app my-app`
+
