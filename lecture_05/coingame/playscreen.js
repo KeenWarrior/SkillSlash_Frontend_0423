@@ -23,20 +23,13 @@ function playgame(){
         let coin = document.createElement("img");
         alive = true;
         coin.src = "./coin.webp";
-        coin.style.width = "50px";
-        coin.style.height = "50px";
-        coin.style.position = "absolute";
+        coin.setAttribute("class", "coin");
         coin.style.left = Math.random() * 100 + "vw";
         coin.style.top = Math.random() * 100 + "vh";
         container.appendChild(coin);
 
         coin.addEventListener("mouseover", () => {
-            count += 10;
-            score.innerHTML = "Score: " + count;
-            container.removeChild(coin);
-            alive = false;
-            let audio = new Audio("./coin.wav");
-            audio.play();
+            [count, alive] = touchCoin(count, score, container, coin);
         });
 
         let randomTime = Math.random() * 2000;
@@ -54,12 +47,10 @@ function playgame(){
         let bomb = document.createElement("img");
         alive = true;
         bomb.src = "./bomb.png";
-        bomb.style.width = "50px";
-        bomb.style.height = "50px";
-        bomb.style.position = "absolute";
+        bomb.setAttribute("class", "bomb");
         bomb.style.left = Math.random() * 100 + "vw";
         bomb.style.top = Math.random() * 100 + "vh";
-        // container.appendChild(bomb);
+        container.appendChild(bomb);
 
         bomb.addEventListener("mouseover", () => {
             gameOverScreen(count);
@@ -75,4 +66,12 @@ function playgame(){
 
     }, 100);
     root.appendChild(container);
+}
+
+function touchCoin(count, score, container, coin){
+    score.innerHTML = "Score: " + count;
+    container.removeChild(coin);
+    let audio = new Audio("./coin.wav");
+    audio.play();
+    return [count + 10, false];
 }
