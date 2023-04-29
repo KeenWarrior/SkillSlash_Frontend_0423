@@ -1,0 +1,14 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    flex-grow: 1;
+}
+
+.filler {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+
+}
