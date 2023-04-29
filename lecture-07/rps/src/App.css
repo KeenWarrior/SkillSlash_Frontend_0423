@@ -1,0 +1,70 @@
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+
+
+
+.handSymbols {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 32px 0px;
+}
+
+.symbol {
+  font-size: 6rem;
+  margin: 0px;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0px;
+  flex-grow: 1;
+}
+
+.scoreText {
+  font-size: 3rem;
+  margin: 0px;
+}
+
+.handTexts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.handText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.handTextItem {
+  font-size: 2rem;
+}
+
+
+.actionButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 64px 0px;
+}
+
+.actionButton{
+  margin-top: 32px;
+  width: 150px;
+  height: 100px;
+  font-size: 2rem;
+
+}
