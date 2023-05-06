@@ -2,21 +2,27 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainBottomNavigation from "./MainBottomNavigation";
 import OrderPage from "./pages/OrderPage";
 import LoginPage from "./pages/LoginPage";
+import UserGaurd from "./gaurds/UserGaurd";
+import AuthGaurd from "./gaurds/AuthGaurd";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <OrderPage/>
+      <AuthGaurd>
+        <OrderPage />
+      </AuthGaurd>
     ),
   },
   {
     path: "/goout",
     element: (
-      <div>
-        Go out
-        <MainBottomNavigation />
-      </div>
+      <AuthGaurd>
+        <div>
+          Go out
+          <MainBottomNavigation />
+        </div>
+      </AuthGaurd>
     ),
   },
   {
@@ -49,11 +55,14 @@ const router = createBrowserRouter([
 
   {
     path: "/login",
-    element: (<LoginPage/>
+    element: (
+      <UserGaurd>
+        <LoginPage />
+      </UserGaurd>
     ),
   },
 ]);
 
 export default function MainRouter() {
-  return  <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 }

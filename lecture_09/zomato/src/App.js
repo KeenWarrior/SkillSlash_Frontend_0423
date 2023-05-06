@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 let UserContext = createContext();
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
 
   useEffect(() => {
     getAuth(firebaseApp).onAuthStateChanged((user) => {
