@@ -13,14 +13,22 @@ function App() {
 
   return (
     <div className="App">
+      <Sample>
+        <h1>This is my heading</h1>
+      </Sample>
       <LocationContext.Provider value={{ location, setLocation }}>
-        <div className="App">
+        <div>
           <Toolbar />
           <Router location={location}/>
         </div>
       </LocationContext.Provider>
     </div>
   );
+}
+
+
+function Sample({children}) {
+  return children;
 }
 
 function Router({ location }) {
