@@ -1,0 +1,14 @@
+.dish {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 400px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.left-dish{
+    flex-grow: 1;
+}
+
