@@ -1,35 +1,37 @@
 const initialState = {
-  hotel: 1234,
-  dishes: new Map(),
+  hotel: {
+    id: 1,
+    name: "Hotel Taj",
+    address: "Mumbai",
+  },
+  cartItems: new Map(),
 };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_DISH":
       console.log("ADD_DISH");
-      if (state.dishes.has(action.payload.id)) {
-        state.dishes.set(
-          action.payload.id,
-          state.dishes.get(action.payload.id) + 1
-        );
+      if (state.cartItems.has(action.payload.id)) {
+        const { dish, count } = state.cartItems.get(action.payload.id);
+        state.cartItems.set(action.payload.id, { dish, count: count + 1 });
       } else {
-        state.dishes.set(action.payload.id, 1);
+        state.cartItems.set(action.payload.id, { dish: action.payload, count: 1 });
       }
-      return {...state};
+      return { ...state };
     case "REMOVE_DISH":
-      if (state.dishes.has(action.payload.id)) {
-        state.dishes.set(
+      if (state.cartItems.has(action.payload.id)) {
+        const { dish, count } = state.cartItems.get(action.payload.id);
+        state.cartItems.set(
           action.payload.id,
-          state.dishes.get(action.payload.id) - 1
+          { dish, count: count - 1}
         );
 
-        if (state.dishes.get(action.payload.id) === 0) {
-          state.dishes.delete(action.payload.id);
+        if (count === 1) {
+          state.cartItems.delete(action.payload.id);
         }
       }
 
- 
-      return {...state};
+      return { ...state };
     default:
       return state;
   }

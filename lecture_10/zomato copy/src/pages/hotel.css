@@ -1,3 +1,7 @@
+.hotel {
+    width: 100vw;
+}
+
 .dish {
     display: flex;
     flex-direction: row;

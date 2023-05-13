@@ -5,6 +5,8 @@ import LoginPage from "./pages/LoginPage";
 import UserGaurd from "./gaurds/UserGaurd";
 import AuthGaurd from "./gaurds/AuthGaurd";
 import HotelPage from "./pages/HotelPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import CartEmptyGaurd from "./gaurds/CartEmptyGaurd";
 
 const router = createBrowserRouter([
   {
@@ -46,8 +48,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/hotel",
+    element: <HotelPage />,
+  },
+  {
+    path: "/checkout",
     element: (
-      <HotelPage/>
+      <CartEmptyGaurd>
+        <CheckoutPage />
+      </CartEmptyGaurd>
     ),
   },
   {
