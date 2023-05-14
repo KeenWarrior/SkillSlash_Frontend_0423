@@ -1,6 +1,9 @@
 import { Button, Switch, TextField, ToggleButton } from "@mui/material";
-import { useState } from "react";
 import axios from "./axios";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function LeftPage({
   createOrUpdatetodo,
@@ -9,6 +12,7 @@ export default function LeftPage({
   setFormData,
 }) {
   let handleChange = (event) => {
+    console.log(event.target.value);
     formData[event.target.name] = event.target.value;
     setFormData({ ...formData });
   };
@@ -16,6 +20,12 @@ export default function LeftPage({
   let handleChangeSwitch = (event) => {
     console.log(event.target.checked);
     formData[event.target.name] = event.target.checked;
+    setFormData({ ...formData });
+  };
+
+  let handleChangeDate = (newValue) => {
+    console.log(newValue);
+    formData["complete_by"] = newValue;
     setFormData({ ...formData });
   };
 
@@ -34,12 +44,22 @@ export default function LeftPage({
         name="title"
         onChange={handleChange}
       />
-      <TextField
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DemoContainer components={["DatePicker"]}>
+          <DatePicker
+            label="Basic date picker"
+            onChange={handleChangeDate}
+            value={formData.complete_by}
+            name="complete_by"
+          />
+        </DemoContainer>
+      </LocalizationProvider>
+      {/* <TextField
         label="Complete By"
-        value={formData.complet_by}
-        name="complet_by"
+        value={formData.complete_by}
+        name="complete_by"
         onChange={handleChange}
-      />
+      /> */}
       <Switch
         checked={formData.completed}
         name="completed"
@@ -76,7 +96,7 @@ export default function LeftPage({
             setCreateOrUpdatetodo("create");
             setFormData({
               title: "",
-              complet_by: "",
+              complete_by: "",
               completed: false,
             });
           }}

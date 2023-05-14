@@ -2,6 +2,7 @@ import { Button, List, ListItem } from "@mui/material";
 
 import { useEffect, useState } from "react";
 import axios from "./axios";
+import dayjs from "dayjs";
 
 export default function RightPage({
   createOrUpdatetodo,
@@ -10,6 +11,8 @@ export default function RightPage({
   setFormData,
 }) {
   const [todos, setTodos] = useState([]);
+
+  const now = dayjs();
 
   const getTodos = () => {
     axios.get("/todos").then((response) => {
@@ -45,16 +48,19 @@ export default function RightPage({
                 borderRadius: "5px",
               }}
               onClick={() => {
-                setFormData({ ...todo });
+                setFormData({ ...todo, complete_by: dayjs(todo.complete_by) });
                 setCreateOrUpdatetodo("update");
               }}
             >
               <div style={{ flexGrow: 1 }}>
                 <h3>{todo.title}</h3>
-                <p>{todo.complet_by}</p>
+                <p>{dayjs(todo.complete_by).format("MM/DD/YYYY")}</p>
               </div>
 
-              <p>{"" + todo.completed}</p>
+              <div>
+                <p>{"" + todo.completed}</p>
+                {dayjs(todo.complete_by).isBefore(now) && <p>Overdue</p>}
+              </div>
             </ListItem>
           );
         })}

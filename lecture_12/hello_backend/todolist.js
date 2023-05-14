@@ -9,11 +9,11 @@ mongoose.connect(
 
 const todoSchema = new mongoose.Schema({
   title: String,
-  complet_by: String,
+  complete_by: Date,
   completed: Boolean,
 });
 
-const Todo = mongoose.model("TODOS", todoSchema);
+const Todo = mongoose.model("TODO", todoSchema);
 
 const app = express();
 
