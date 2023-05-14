@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./hotel.css";
 import { Box, Button, List, ListItem, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function calculateTotal(cartItems) {
   let total = 0;
@@ -19,6 +19,9 @@ export default function HotelPage() {
 
   let dispatch = useDispatch();
   let navigate = useNavigate();
+  const params = useParams();
+
+  console.log(params);
 
   let dishes = [
     {

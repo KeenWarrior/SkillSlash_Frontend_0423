@@ -1,6 +1,9 @@
 import { Divider, Typography } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Hotel({
+  id,
   name,
   food,
   price,
@@ -9,9 +12,19 @@ export default function Hotel({
   tracking,
   rating,
 }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
     <div
       className="hotel"
+      onClick={() => {
+        dispatch({
+          type: "SET_HOTEL",
+          payload: { name, food, price, image, eta, tracking, rating },
+        });
+        navigate("/hotel/" + id);
+      }}
       style={{
         display: "flex",
         flexDirection: "row",
@@ -20,15 +33,18 @@ export default function Hotel({
         margin: "16px",
         borderRadius: "16px",
         border: "1px solid #ccc",
-        width: "50vw"
+        width: "50vw",
       }}
     >
-      <img src={image} style={{
-        width: "150px",
-        height: "100px",
-        marginRight: "16px",
-        borderRadius: "8px",
-      }}/>
+      <img
+        src={image}
+        style={{
+          width: "150px",
+          height: "100px",
+          marginRight: "16px",
+          borderRadius: "8px",
+        }}
+      />
       <div
         className="hotelInfo"
         style={{
@@ -36,7 +52,6 @@ export default function Hotel({
           flexGrow: 1,
           flexDirection: "column",
           alignItems: "flex-start",
-
         }}
       >
         <Typography variant="h6">{name}</Typography>
