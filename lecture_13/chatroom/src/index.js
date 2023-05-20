@@ -5,18 +5,15 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { createStore } from "redux";
-import combinedReducer from "./store/combinedReducer";
+import rootReducer from "./store/combinedReducer";
 import { Provider } from "react-redux";
 
-const persistedState = JSON.parse(localStorage.getItem("appState"));
+const persistedState = JSON.parse(localStorage.getItem("reduxState"));
 
-const store = createStore(
-  combinedReducer,
-  persistedState ? persistedState : {}
-);
+const store = createStore(rootReducer, persistedState ? persistedState : {});
 
 store.subscribe(() => {
-  localStorage.setItem("appState", JSON.stringify(store.getState()));
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
