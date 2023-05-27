@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="./css/styles.css"
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>URL Shortner</title>
+  </head>
+  <body>
+    <div id="root">
+      <input
+        class="input"
+        type="text"
+        name="longUrl"
+        id="longUrl"
+        placeholder="Long URL"
+      />
+      <input
+        class="input"
+        type="text"
+        name="shortUrl"
+        id="shortUrl"
+        placeholder="Short URL"
+      />
+
+      <button class="submit_button" type="submit" onclick="shorten()">
+        Shorten
+      </button>
+    </div>
+
+    <script>
+      function shorten() {
+        const longUrl = document.getElementById("longUrl").value;
+        const shortUrl = document.getElementById("shortUrl").value;
+
+        if (!longUrl || !shortUrl) {
+          alert("Please enter both long and short url");
+          return;
+        }
+
+        axios
+          .post("http://localhost:3000/api/urls", {
+            longUrl: longUrl,
+            shortUrl: shortUrl,
+          })
+          .then(function (response) {
+            alert("Added successfully");
+          })
+          .catch(function (error) {
+            alert("Failed to add");
+          });
+      }
+    </script>
+  </body>
+</html>
