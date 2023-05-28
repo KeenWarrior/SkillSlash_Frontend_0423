@@ -32,3 +32,24 @@ Lecture 06
 - https://reactrouter.com/en/main/start/overview
 
 
+Lecture 15
+
+- `npm init -y`  -> create empty npm package
+- `npm i nodemon` -> install nodemon
+- Add `nodemon index.js` to scripts 
+- Install other needed dependancies.
+
+## Lecture 16
+
+- Install mongodb community server and mongosh
+- `mongod --dbpath=[path_to_dir]`
+- `mongosh` to run the Mongo Shell 
+- `show dbs` to show list of dbs
+- `use [dbname]` to select a db
+- `db.[collection_name].insertOne({})`
+- `db.[collection_name].find({})`
+
+
+
+
+

@@ -49,7 +49,7 @@ app.delete("/api/urls/:id", async (req, res) => {
   res.send(data);
 });
 
-mongoose.connect("mongodb://localhost:27017/shortUrls").then(() => {
+mongoose.connect("mongodb+srv://anuj:anuj@todo.0vzswco.mongodb.net/notesdb?retryWrites=true&w=majority").then(() => {
   console.log("Connected to DB");
   app.listen(3000, () => {
     console.log("Server is running on port 3000");
