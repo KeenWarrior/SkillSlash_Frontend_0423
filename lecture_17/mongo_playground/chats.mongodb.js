@@ -1,26 +1,12 @@
-use("chatapp");
+use("chatsapp");
 
 
-// db.getCollection("messages").insertMany([
-//     {
-//         from: "user3",
-//         to: "user2",
-//         message: "Hello user2 from user3",
-//         createdAt: new Date()
-//     },
-//     {
-//         from: "user2",
-//         to: "user3",
-//         message: "Hello user3 from user2",
-//         createdAt: new Date()
-//     }
-// ]);
-
-db.getCollection("messages").find(
+db.getCollection("chats").insertMany([
     {
-        $or: [
-            {from: "user3"},
-            {to: "user3"}
-        ]
-    }
-)
+        from: "keenwarrior",
+        to: "avinash",
+        message: "This is awesome",
+        createdAt: new Date()
+    },
+]);
+
