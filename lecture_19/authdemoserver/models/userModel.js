@@ -18,14 +18,18 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.methods.verifyPassword = function (password) {
-    return this.password === password;
-}
+  return this.password === password;
+};
+
+// userSchema.statics.doSomething = function () { 
+//     console.log("Do something");
+// }
 
 userSchema.methods.toJSON = function () {
-    const obj = this.toObject();
-    delete obj.password;
-    return obj;
-}
+  const user = this.toObject();
+  delete user.password;
+  return user;
+};
 
 const User = mongoose.model("User", userSchema);
 
