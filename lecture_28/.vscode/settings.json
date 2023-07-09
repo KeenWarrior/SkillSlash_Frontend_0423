@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": true
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "CockroachDB",
+            "name": "cdb",
+            "connectString": "postgresql://anuj:3La3LNGIyXn2tcx3RevDVQ@elixir-prawn-5263.8nk.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
+        }
+    ]
+}
