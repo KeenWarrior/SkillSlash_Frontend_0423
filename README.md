@@ -50,6 +50,25 @@ Lecture 15
 - `db.[collection_name].find({})`
 
 
+Lecture 27
+- https://www.w3schools.com/sql/
+- Distributed SQL (High Avail, Fault Tol and Performance)
+- https://www.cockroachlabs.com/
+- https://mariadb.com/products/enterprise/xpand/
+- OLAP and OLTP
+- HBASE focus more on OLAP
+
+
+Lecture 28
+- Postgress
+- Import and Export
+- Stored Procedures and Triggers
+- Dump and restore
+- USER Management
+- DB Management
+
+
+
 
 
 
