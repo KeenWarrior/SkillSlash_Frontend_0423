@@ -7,8 +7,8 @@
             "driver": "PostgreSQL",
             "name": "bingo",
             "database": "skillslash",
-            "username": "admin",
-            "password": "admin"
+            "username": "jay",
+            "password": "jay"
         }
     ]
 }
