@@ -59,13 +59,23 @@ Lecture 27
 - HBASE focus more on OLAP
 
 
-Lecture 28
+## Lecture 28
 - Postgress
 - Import and Export
 - Stored Procedures and Triggers
 - Dump and restore
 - USER Management
 - DB Management
+
+## Lecture 30
+- ORM -> https://sequelize.org/
+- DI (Dependency Injection) -> https://github.com/typestack/typedi
+- DI and many other things need Reflection
+-  Reflection is the ability of a program to manipulate variables, properties, and methods of objects at runtime
+- https://db-migrate.readthedocs.io/
+
+
+
 
 
 

@@ -2,7 +2,9 @@ const Note = require("../models/notesModel");
 const sequelize = require("../db");
 
 async function createNote(req, res) {
+
   const { title, description, tag } = req.body;
+
   console.log(req.body);
   const response = await Note.create({
     title,
