@@ -11,7 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.6.1",
-    "mongodb-memory-server": "^8.13.0"
+    "mock-req-res": "^1.2.1",
+    "mongodb-memory-server": "^8.13.0",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
