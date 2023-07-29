@@ -1,0 +1,23 @@
+{
+    "sqltools.connections": [
+        {
+            "server": "localhost",
+            "port": 9042,
+            "previewLimit": 50,
+            "driver": "Cassandra",
+            "name": "cass",
+            "username": "cassandra",
+            "password": "cassandra"
+        },
+        {
+            "pgOptions": {
+                "ssl": true
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "connectString": "postgres://anujgargcse:n40lrZdMINhG@ep-withered-cake-742177.us-east-2.aws.neon.tech/neondb",
+            "name": "skillslash"
+        }
+    ]
+}
