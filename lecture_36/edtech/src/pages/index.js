@@ -1,5 +1,5 @@
 import Head from "next/head";
-import axios from "@/utils/axios";
+import mockaxios from "@/utils/mockaxios";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import LandingPageHero from "@/components/landing/LandingPageHero";
@@ -27,7 +27,7 @@ export default function Home({ heroSlides }) {
 }
 
 export const getStaticProps = async () => {
-  const response = await axios.get("/landing/hero");
+  const response = await mockaxios.get("/landing/hero");
   const heroSlides = response.data;
   return {
     props: {
