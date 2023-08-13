@@ -29,13 +29,21 @@ mock.onGet("/landing/hero").reply(200, [
 ]);
 
 mock
-  .onGet("/landing/course-selctions")
+  .onGet("/landing/course-selections")
   .reply(200, [
     {
       label: "Python",
       title: "Python for Data Science and Machine Learning Bootcamp",
       description:
         "Learn how to use NumPy, Pandas, Seaborn , Matplotlib , Plotly , Scikit-Learn , Machine Learning, Tensorflow , and more!",
+      courses: [],
+    },
+
+    {
+      label: "Web Development",
+      title: "Web Development for Data Science and Machine Learning Bootcamp",
+      description:
+        "Learn how to use Web Development, Pandas, Seaborn , Matplotlib , Plotly , Scikit-Learn , Machine Learning, Tensorflow , and more!",
       courses: [],
     },
   ]);

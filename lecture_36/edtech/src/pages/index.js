@@ -8,7 +8,7 @@ import CourseSelections from "@/components/landing/CourseSelections";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ heroSlides }) {
+export default function Home({ heroSlides, courseCategories }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function Home({ heroSlides }) {
       <div>
         <TopAppBar />
         <LandingPageHero heroSlides={heroSlides} />
-        <CourseSelections />
+        <CourseSelections courseCategories={courseCategories} />
       </div>
     </>
   );
@@ -29,9 +29,13 @@ export default function Home({ heroSlides }) {
 export const getStaticProps = async () => {
   const response = await mockaxios.get("/landing/hero");
   const heroSlides = response.data;
+
+  const response2 = await mockaxios.get("/landing/course-selections");
+  const courseCategories = response2.data;
   return {
     props: {
       heroSlides,
+      courseCategories,
     },
   };
 };

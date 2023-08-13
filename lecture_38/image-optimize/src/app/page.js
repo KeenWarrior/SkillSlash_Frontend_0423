@@ -1,12 +1,25 @@
 import Image from "next/image";
-import styles from "./page.module.css";
-import thor from "./thor.jpeg";
+import thor from "@/images/thor.jpeg";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Image src={thor} />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={thor}
+        width={100}
+        style={{
+          width: "100vw",
+          height: "auto",
+        }}
+      />
       <h1>Welcome to my page</h1>
-    </main>
+    </div>
   );
 }
