@@ -5,27 +5,13 @@ const { paginate } = require('./plugins');
 const courseSchema = mongoose.Schema({
   author: {
     type: mongoose.SchemaTypes.ObjectId,
-    ref: 'User',
+    ref: 'Mentor',
     required: true,
   },
   name: {
     type: String,
     required: true,
     trim: true,
-  },
-  description: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  slug: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  price: {
-    type: Number,
-    required: true,
   },
   sections: [
     {
