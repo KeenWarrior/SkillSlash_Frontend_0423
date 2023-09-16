@@ -22,7 +22,7 @@ export default function AuthLayout({ children }) {
     const accessToken = access_cookie.value;
     const user = getUser(accessToken);
     if (user) {
-      if (user.role === "student") {
+      if (user.role === "user") {
         return redirect("/profile");
       } else if (user.role === "instructor") {
         return redirect("/instructor/profile");

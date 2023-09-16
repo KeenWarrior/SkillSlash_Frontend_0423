@@ -62,7 +62,7 @@ export default function SignIn() {
         setCookie('refresh_token', refreshToken);
         const user = response.data.user;
         console.log(user);
-        if(user.role === 'student'){
+        if(user.role === 'user'){
           router.push('/profile');
         } else if(user.role === 'instructor'){
           router.push('/instructor/profile');

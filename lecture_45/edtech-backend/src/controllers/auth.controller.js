@@ -49,6 +49,7 @@ const verifyEmail = catchAsync(async (req, res) => {
 });
 
 const getMe = catchAsync(async (req, res) => {
+  console.log("Requested me");
   res.status(httpStatus.OK).json(req.user);
 });
 

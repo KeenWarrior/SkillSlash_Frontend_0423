@@ -5,7 +5,7 @@ import axios from "@/utils/axios";
 import { deleteCookie, getCookie } from "cookies-next";
 const { useRouter } = require("next/navigation");
 
-export default function TopAppBar() {
+export default function TopAppBar({user}) {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -46,6 +46,7 @@ export default function TopAppBar() {
         >
           App Bar
         </Typography>
+        <Typography>Hello, {user.name}</Typography>
         <Button variant="contained" color="primary" onClick={handleLogout}>
           Logout
         </Button>
